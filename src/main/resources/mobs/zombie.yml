@@ -1,0 +1,77 @@
+# 僵尸配置
+name: "&c狂暴僵尸"
+type: ZOMBIE
+
+# 基础属性
+attributes:
+  health: 40.0
+  damage: 8.0
+  speed: 0.3
+  armor: 4.0
+  knockback-resistance: 0.5
+
+# 武器配置
+weapon:
+  main-hand:
+    material: DIAMOND_SWORD
+    name: "&c血之剑"
+    lore:
+      - "&7这把剑散发着血腥的气息"
+    enchantments:
+      - type: SHARPNESS
+        level: 3
+      - type: FIRE_ASPECT
+        level: 1
+
+# 护甲配置
+armor:
+  helmet:
+    material: DIAMOND_HELMET
+    enchantments:
+      - type: PROTECTION_ENVIRONMENTAL
+        level: 2
+  chestplate:
+    material: DIAMOND_CHESTPLATE
+  leggings:
+    material: DIAMOND_LEGGINGS
+  boots:
+    material: DIAMOND_BOOTS
+
+# 攻击配置
+attack:
+  interval: 20
+  accuracy: 0.85
+  range: 3.0
+
+# 目标配置
+target:
+  type: PLAYER
+  players:
+    - "%player_name%"
+
+# 行为配置
+behaviors:
+  fireball:
+    enabled: false
+    interval: 60
+    speed: 1.5
+    damage: 5.0
+    accuracy: 0.7
+    type: SMALL
+
+  explosion:
+    enabled: false
+    trigger-distance: 5.0
+    power: 2.0
+    fire: false
+    break-blocks: false
+
+  command:
+    enabled: false
+    interval: 100
+    commands: []
+
+  kether:
+    enabled: false
+    interval: 50
+    script: ""

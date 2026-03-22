@@ -1,0 +1,31 @@
+# MobAssault 配置文件
+settings:
+  # 默认攻击间隔（tick）
+  default-attack-interval: 20
+  # 默认攻击精准度（0.0-1.0）
+  default-accuracy: 0.8
+  # 是否启用 Kether 脚本
+  enable-kether: true
+  # 调试模式
+  debug: false
+  # 怪物存活时间（tick），0为永久
+  mob-lifespan: 0
+  # 怪物生成时是否有特效
+  spawn-effects: true
+
+# 消息配置
+messages:
+  prefix: "&8[&cMobAssault&8] &7"
+  mob-spawned: "&a怪物已生成！ID: %id%"
+  mob-removed: "&c怪物已移除！"
+  all-mobs-removed: "&a所有怪物已移除！"
+  no-permission: "&c你没有权限执行此命令！"
+  player-not-found: "&c找不到该玩家！"
+  invalid-args: "&c参数错误！用法: %usage%"
+  config-reloaded: "&a配置已重载！"
+  mob-list-header: "&6=== 活动怪物列表 ==="
+  mob-list-entry: "&7- ID: %id% | 类型: %type% | 目标: %target%"
+  mob-list-empty: "&7没有活动的怪物"
+  config-header: "&6=== 怪物配置: %type% ==="
+  unknown-mob-type: "&c未知的怪物类型: %type%"
+  console-not-allowed: "&c该命令只能由玩家执行！"

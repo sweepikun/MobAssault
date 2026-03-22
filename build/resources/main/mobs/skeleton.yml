@@ -1,0 +1,65 @@
+# 骷髅配置
+name: "&f精准骷髅"
+type: SKELETON
+
+attributes:
+  health: 30.0
+  damage: 6.0
+  speed: 0.28
+  armor: 2.0
+  knockback-resistance: 0.2
+
+weapon:
+  main-hand:
+    material: BOW
+    name: "&b寒冰之弓"
+    lore:
+      - "&7射出的箭矢带有冰霜之力"
+    enchantments:
+      - type: ARROW_DAMAGE
+        level: 3
+      - type: ARROW_FIRE
+        level: 1
+      - type: ARROW_INFINITE
+        level: 1
+
+armor:
+  helmet:
+    material: LEATHER_HELMET
+  chestplate:
+    material: LEATHER_CHESTPLATE
+
+attack:
+  interval: 30
+  accuracy: 0.95
+  range: 15.0
+
+target:
+  type: PLAYER
+  players: []
+
+behaviors:
+  fireball:
+    enabled: false
+    interval: 80
+    speed: 1.2
+    damage: 4.0
+    accuracy: 0.9
+    type: SMALL
+
+  explosion:
+    enabled: false
+    trigger-distance: 3.0
+    power: 1.5
+    fire: false
+    break-blocks: false
+
+  command:
+    enabled: false
+    interval: 120
+    commands: []
+
+  kether:
+    enabled: false
+    interval: 60
+    script: ""
