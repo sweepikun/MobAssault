@@ -17,6 +17,7 @@ settings:
 messages:
   prefix: "&8[&cMobAssault&8] &7"
   mob-spawned: "&a怪物已生成！ID: %id%"
+  egg-received: "&a已获得 %amount% 个 %type% 自定义刷怪蛋！"
   mob-removed: "&c怪物已移除！"
   all-mobs-removed: "&a所有怪物已移除！"
   no-permission: "&c你没有权限执行此命令！"

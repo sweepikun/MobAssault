@@ -18,6 +18,7 @@ permissions:
     default: op
     children:
       mobassault.spawn: true
+      mobassault.egg: true
       mobassault.remove: true
       mobassault.removeall: true
       mobassault.list: true
@@ -31,6 +32,10 @@ permissions:
 
   mobassault.spawn:
     description: 允许生成怪物
+    default: op
+
+  mobassault.egg:
+    description: 允许获取自定义刷怪蛋
     default: op
 
   mobassault.remove:

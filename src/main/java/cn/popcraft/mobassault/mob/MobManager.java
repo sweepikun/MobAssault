@@ -266,4 +266,22 @@ public class MobManager {
     public List<String> getMobTypes() {
         return new ArrayList<>(plugin.getConfigManager().getAllMobConfigs().keySet());
     }
+
+    public int getNextId() {
+        return nextId++;
+    }
+
+    public void registerMob(int id, CustomMob customMob) {
+        activeMobs.put(id, customMob);
+    }
+
+    public void startBehaviorTasks(CustomMob customMob, String target) {
+        // 设置目标
+        if (target != null) {
+            setupTarget(customMob, target);
+        }
+
+        // 启动行为任务
+        startBehaviorTasks(customMob);
+    }
 }

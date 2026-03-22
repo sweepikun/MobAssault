@@ -2,8 +2,10 @@ package cn.popcraft.mobassault;
 
 import cn.popcraft.mobassault.command.MobAssaultCommand;
 import cn.popcraft.mobassault.config.ConfigManager;
+import cn.popcraft.mobassault.listener.EggUseListener;
 import cn.popcraft.mobassault.listener.MobListener;
 import cn.popcraft.mobassault.mob.MobManager;
+import cn.popcraft.mobassault.spawner.SpawnerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MobAssault extends JavaPlugin {
@@ -11,6 +13,7 @@ public class MobAssault extends JavaPlugin {
     private static MobAssault instance;
     private ConfigManager configManager;
     private MobManager mobManager;
+    private SpawnerManager spawnerManager;
 
     @Override
     public void onEnable() {
@@ -23,11 +26,16 @@ public class MobAssault extends JavaPlugin {
         // 初始化怪物管理器
         mobManager = new MobManager(this);
         
+        // 初始化刷怪蛋管理器
+        spawnerManager = new SpawnerManager(this);
+        
         // 注册命令
         MobAssaultCommand.register();
         
         // 注册事件监听器
-        getServer().getPluginManager().registerEvents(new MobListener(this), this);
+        MobListener mobListener = new MobListener(this);
+        getServer().getPluginManager().registerEvents(mobListener, this);
+        getServer().getPluginManager().registerEvents(new EggUseListener(this, mobListener), this);
         
         getLogger().info("MobAssault 插件已启用！");
     }
@@ -52,5 +60,9 @@ public class MobAssault extends JavaPlugin {
 
     public MobManager getMobManager() {
         return mobManager;
+    }
+
+    public SpawnerManager getSpawnerManager() {
+        return spawnerManager;
     }
 }
